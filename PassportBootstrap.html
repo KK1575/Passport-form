@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Passport Form</title>
+  <style>
+
+.container{
+  background-color: lightgray;
+}
+
+  </style>
+  <script type="text/javascript" src="PassportForm.js">
+  </script>
+</head>
+
+<body>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+
+    <form action="somefile.html" method="post" name="form" onsubmit=" return validateform()">
+<div class="container">
+      <div class="container">
+
+        <p align=right style="background-color:lightgrey;"><b>File Number (For Office Use Only)</b> </br>
+          <input type="text" name="file" id="file" Placeholder="Enter File Number" style="width:230px;">
+        </p>
+      </div>
+
+      <fieldset>
+        <div class="container">
+          <h1 style="background-color:yellow;">
+            <center>GOVERNMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS </br> PASSPORT APPLICATION FORM</center>
+          </h1>
+
+        </div>
+
+
+        <div class="container">
+          <p>Please read the Passport Instruction Booklet carefully before filling the form. Fill this form in CAPITAL
+            LETTERS using blue/ black ink ball point pen only. Furnishing of incorrect information/ suppression of
+            information would lead to rejection of the application and would attract penal provisions as prescribed
+            under
+            the Passports Act, 1967. Please produce your original documents at the time of submission of the form. </p>
+          <hr />
+
+        </div>
+      </div>
+      </fieldset>
+      <fieldset>
+
+        <p style="font-size:20px;background-color:yellow;" class="container"><b>1. Service Required</b></p>
+<div class="container">
+        <div class="container">
+          <p>
+            <lable for="myfile"><b>Select a Photo: </b></lable><br><input type=file accept=".jpg,.jpeg,.png/*"
+              alt="Please paste colour photograph" name="text" id="text"
+              style="border:1px solid black; width:250px; height:70px;box-shadow:2px 2px;" align="right">
+        </div>
+        <div class="container">
+          <lable for="myfile"><b>Select a Signature/ Left Hand Thumb:</b></lable><br>
+          <input type="file" name="text1" id="text1" accept=".jpg,.jpeg,.png/*"
+            style="border:1px solid black;width:250px; height:70px;box-shadow:2px 2px;"></p>
+        </div>
+
+
+  
+
+  <div class="container">
+    <b style="font-family:arial; font-size:16px">1.1 Applying for</b>
+    <div class="container-fluid">
+      <input type="radio" name="apply" id="apply" style="margin: 10px;" onclick="passport()" />Fresh Passport
+      <input type="radio" name="apply" id="apply1" style="margin: 10px;" onclick="passport()" />Re-issue of Passport
+    </div>
+  </div>
+</div>
+
+  <div class="container col-xs-6">
+    <b style="font-family:arial; font-size:16px">1.2 If re-issue, specify reason(s)</b>
+    <div class="container-fluid">
+      <input type="radio" name="reason" id="reason1" onclick="check()" style="margin: 10px;" disabled>Validity
+      Expired within 3 years/ Due to Expire
+
+      <input type="radio" name="reason" id="reason2" onclick="check()" style="margin: 10px;" disabled>Exhaustion of
+      Pages
+    </div>
+    <div class="container-fluid">
+      <input type="radio" name="reason" id="reason3" onclick="check()" style="margin: 10px;" disabled>Validity
+      Expired more than 3 years ago &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="reason" id="reason4" onclick="check()" style="margin: 10px;" disabled>Lost Passport
+    </div>
+    <div class="container-fluid">
+      <input type="radio" name="reason" id="reason5" onclick="check()" style="margin: 10px;" disabled>Change in
+      Existing Personal Particulars &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="reason" id="reason6" onclick="check()" style="margin: 10px;" disabled>Damaged
+      Passport
+    </div>
+  </div>
+  <div class="container col-xs-9">
+    <b style="font-family:arial; font-size:16px">1.3 If change in existing personal particulars, specify reason(s)
+    </b>
+    <div class="container-fluid">
+      <input type="checkbox" name="change" id="change1" disabled>Appearance
+      <input type="checkbox" name="change" id="change2" disabled>Signature &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" name="change" id="change3" disabled>Given Name
+    </div>
+    <div class="container-fluid">
+      <input type="checkbox" name="change" id="change4" disabled>Surname &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" name="change" id="change5" disabled>Date of Birth
+      <input type="checkbox" name="change" id="change6" disabled>Spouse Name
+    </div>
+    <div class="container-fluid">
+      <input type="checkbox" name="change" id="change7" disabled>Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="checkbox" name="change" id="change8" disabled>Delete ECR &nbsp;&nbsp;
+      <input type="checkbox" name="change" id="change9" onclick="fun()" disabled>Others, Please specify
+    </div>
+    <div class="container"><input type="text" name="o2" id="o2" placeholder="Other Reason.." disabled>
+    </div>
+  </div>
+  <div class="container">
+    <b style="font-family:arial; font-size:16px">1.4 Type of Application</b>
+    <div class="container-fluid">
+      <input type="radio" name="type" id="type" style="margin: 10px;" />Normal
+      <input type="radio" name="type" id="type" style="margin: 10px;" />Tatkaal
+    </div>
+  </div>
+  <div class="container">
+    <b style="font-family:arial; font-size:16px">1.5 Type of Passport Booklet</b>
+    <div class="container-fluid">
+      <input type="radio" name="book" id="book" style="margin: 10px;" />36 Pages
+      <input type="radio" name="book" id="book" style="margin: 10px;" />60 Pages
+    </div>
+  </div>
+  <div class="container">
+    <b style="font-family:arial; font-size:16px">1.6 Validity Required <br /></b>(For minors between 15 and 18
+    years)</b>
+    <div class="container-fluid">
+      <input type="radio" name="valid" id="valid" />10 Years
+      <input type="radio" name="valid" id="valid" />Up to age 18
+    </div>
+    <hr />
+  </div>
+  </fieldset>
+  <fieldset>
+    <p style="font-size:20px;background-color:yellow;" class="container"><b>2. Applicant Details</b></p>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>2.1 Applicant's Given Name</b> (Given Name means First name
+        followed by Middle name (If any))(Initials not allowed)</p>
+      <input type="text" name="app" id="app" Placeholder="Enter Your Name..." style="width:350px;" onsubmit="f1()">
+      <p style="font-family:arial; font-size:16px"><b>Surname</b> </p>
+      <input type="text" name="sur" id="sur" Placeholder=" Enter Your Surname..." style="width:350px;">
+    </div>
+    <div class="container">
+      <br><b style="font-family:arial; font-size:16px"> 2.2 Are you known by any other names (aliases)? </b><br>If
+      yes, provide details in Column 1 of Supplementary Form
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="7" id="7" />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="7" id="7" />No
+    </div>
+
+    <div class="container">
+      <b style="font-family:arial; font-size:16px">2.3 Have you ever changed your name? </b><br>If yes, provide
+      details in Column 2 of Supplementary Form
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="8" id="8" />Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="8" id="8" />No
+    </div>
+    <div class="container col-xs-10">
+      <br>
+      <p style="font-family:arial; font-size:16px"><b>2.4 Date of Birth (DD-MM-YYYY)
+          <input type="text" name="date1" id="date1" onblur="ValidateDOB()"></p>
+    
+      <p style="font-family:arial; font-size:16px">2.5 Place of Birth (Village or Town or City)</p>
+      <input type="text" name="9" id="9" Placeholder=" Enter Your BirthPlace..." style="width:350px;">
+      <p style="font-family:arial; font-size:16px">District (If born in India) </p>
+      <input type="text" name="10" id="10" Placeholder=" Enter Your District..." style="width:350px;">
+      <p style="font-family:arial; font-size:16px">State/ UT (If born in India)</p>
+      <input type="text" name="11" id="11" Placeholder=" Enter Your State..." style="width:350px;">
+      <p style="font-family:arial; font-size:16px">Region/Country (If born abroad) If born before 15/08/1947 in a
+        place now in Pakistan or Bangladesh,</br> write "Undivided India" </p>
+      <input type="text" name="12" id="12" Placeholder=" Enter Your Country..." style="width:350px;">
+
+    </div>
+    <div class="container">
+      <b style="font-family:arial; font-size:16px">2.6 Gender</b>
+      <div class="container-fluid">
+        <input type="radio" name="gender" id="gender" />Male
+        <input type="radio" name="gender" id="gender" />Female
+        <input type="radio" name="gender" id="gender" />Transgender
+      </div>
+    </div>
+    <div class="container">
+      <b style="font-family:arial; font-size:16px">2.7 Marital Status</b>
+      <div class="container-fluid">
+        <input type="radio" name="status" id="status" />Single</td>
+        <input type="radio" name="status" id="status" />Married
+        <input type="radio" name="status" id="status" />Divorced
+        <input type="radio" name="status" id="status" />Widow/ Widower
+        <input type="radio" name="status" id="status" />Separated
+      </div>
+    </div>
+    <div class="container">
+      <b style="font-family:arial; font-size:16px">2.8 Citizenship of India byy </b>
+      <div class="container-fluid">
+        <input type="radio" name="citi" id="citi" />Birth
+        <input type="radio" name="citi" id="citi" />Descent
+        <input type="radio" name="citi" id="citi" />Registration/ Naturalization
+      </div>
+    </div>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>2.9 PAN (If available)</b></p>
+      <input type="text" Placeholder="Type Here.." name="pan" id="pan">
+      <p style="font-family:arial; font-size:16px"><b>2.10 Voter ID (If available)</b> </p>
+      <input type="text" Placeholder="Type Here.." name="vote" id="vote">
+    </div>
+    <div class="container col-xs-12">
+      <b style="font-family:arial; font-size:16px">2.11 Employment Type </b>
+      <div class="container-fluid">
+        <input type="radio" name="emp" id="emp" />PSU &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="emp" id="emp" />Government
+        <input type="radio" name="emp" id="emp" />Statutory Body
+        <input type="radio" name="emp" id="emp" />Retired Government Servant
+        <input type="radio" name="emp" id="emp" />Self Employed
+      </div>
+      <div class="container-fluid">
+        <input type="radio" name="emp" id="emp" />Private
+        <input type="radio" name="emp" id="emp" />Homemaker
+        <input type="radio" name="emp" id="emp" />Not Employed &nbsp;
+        <input type="radio" name="emp" id="emp" />Retired-Private Service &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="emp" id="emp" />Student
+      </div>
+      <div class="container-fluid">
+        <input type="radio" name="emp" id="emp" />Others 
+        <input type="radio" name="emp" id="emp" />Owners, Partners & Directors of companies which are members of CII,
+        FICCI & ASSOCHAM
+      </div>
+      <div class="container col-xs-2">
+        <br>
+        <p style="font-family:arial; font-size:16px"><b>2.12 If employed in Government/ Statutory Body/ PSU, specify
+            organization name Otherwise Type "NONE"</b></p>
+        <input type="text" name="eg" id="eg" Placeholder="Type Here.." style="width:350px;">
+      </div>
+      <div class="container">
+        <b style="font-family:arial; font-size:16px">2.13 Is either of your parent (in case of minor)/ spouse, a
+          government servant? </b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gp" id="gp" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gp" id="gp" />No
+      </div>
+      <div class="container col-xs-4">
+        <br><b style="font-family:arial; font-size:16px">2.14 Educational Qualification
+        </b>
+        <div class="container-fluid">
+          <input type="radio" name="eq" id="eq" />7th pass or less &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="eq" id="eq" />Between 8th and 9th Standard
+        </div>
+        <div class="container-fluid">
+          <input type="radio" name="eq" id="eq" />10th pass and above
+          <input type="radio" name="eq" id="eq" />Graduate and above
+        </div>
+
+      </div>
+      <div class="container">
+        <br><b style="font-family:arial; font-size:16px">2.15 Are you eligible for Non-ECR category? </b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="en" id="en" />Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="en" id="en" />No&nbsp;&nbsp;&nbsp; For details, see Column 2.15, section B of
+        Instruction Booklet
+      </div>
+      <div class="container col-xs-4">
+        <p style="font-family:arial; font-size:16px"><b>2.16 Visible Distinguishing Mark</p>
+        <input type="text" name="ds" id="ds" Placeholder="Type Here.." style="width:350px;">
+        <p style="font-family:arial; font-size:16px"><b>2.17 Aadhaar Number</b> </p>
+        <input type="text" name="as" id="as" Placeholder=" Enter Your AadharNumber..." style="width:250px;"><hr/>
+      </div>
+  </fieldset>
+  <fieldset>
+    <p style="font-size:20px;background-color:yellow;" class="container"><b>3.Family Details</b></p>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>3.1 Father's Given Name (Given Name means First name followed by Middle name (If any)) (Initials not allowed) </b></p>
+      <input type="text" name="fn" id="fn" Placeholder=" Enter Your Father's Name..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Surname</b> </p>
+      <input type="text" name="s" id="s" Placeholder=" Enter Your Surname..." style="width:300px;" >
+    </div>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>3.2 Mother's Given Name (Given Name means First name followed by Middle name (If any)) (Initials not allowed) </b></p>
+      <input type="text" name="mn" id="mn" Placeholder=" Enter Your Mother's Name..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Surname</b> </p>
+      <input type="text" name="s2" id="s2" Placeholder=" Enter Your Surname..."style="width:300px;" >
+    </div>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>3.3 Legal Guardian's Given Name (If applicable) (Initials not allowed)  </b></p>
+      <input type="text" name="fn" Placeholder=" Enter Your Guardian's Name..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Surname</b> </p>
+      <input type="text" name="s" Placeholder=" Enter Your Surname..."style="width:300px;">
+    </div>
+    <div class="container col-xs-4">
+      <p style="font-family:arial; font-size:16px"><b>3.4 Spouse's Given Name (Given Name means First name followed by Middle name (If any)) (Initials not allowed) </b></p>
+      <input type="text" name="fn" Placeholder=" Enter Your Spouse's Name..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Surname</b> </p>
+      <input type="text" name="s"Placeholder=" Enter Your Surname..." style="width:300px;">
+    </div>
+    <div class="container"><b>3.5 If applicant is minor, provide following details </br>
+      Parent's Passport Details </b>(If passport has been applied for but not received, give File Number)<br> </div>
+    <div class="container col-xs-8">
+      <br><p style="font-family:arial; font-size:16px"><b>Father/ Legal Guardian's File/ Passport Number </b></p>
+      <input type="text" name="fp" id="fp"Placeholder="Type Here.."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Father/ Legal Guardian's Nationality, if not Indian</b> </p>
+      <input type="text" name="fi" id="fi"Placeholder="Type Here.." style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Mother/ Legal Guardian's File/ Passport Number </b></p>
+      <input type="text" name="mp" id="mp" Placeholder="Type Here.."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Mother/ Legal Guardian's Nationality, if not Indian</b> </p>
+      <input type="text" name="mi" id="mi"Placeholder="Type Here.."style="width:300px;" ><hr/>
+    </div>
+
+  </fieldset>
+  <fieldset>
+    <p style="font-size:20px;background-color:yellow;" class="container"><b>4. Present Residential Address Details (Where applicant presently resides)</b></p>
+    <div class="container col-xs-18">
+      <p style="font-family:arial; font-size:16px"><b>4.1 House No. and Street Name  </b></p>
+      <input type="text" name="hs" id="hs" Placeholder=" Enter Your House No. and Street Name ..."style="width:300px;"  >
+      <p style="font-family:arial; font-size:16px"><b>Village or Town or City</b> </p>
+      <input type="text" name="vi" id="vi" Placeholder=" Enter Your City..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>District </b></p>
+      <input type="text" name="dt" id="dt" Placeholder=" Enter Your District..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Police Station </b> </p>
+      <input type="text" name="ps" id="ps" Placeholder="Type Here..."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>State/ UT </b></p>
+      <input type="text" name="st" id="st" Placeholder=" Enter Your State.."style="width:300px;">
+      <p style="font-family:arial; font-size:16px"><b>PIN</b> </p>
+      <input type="text" name="pin" id="pin" Placeholder="Type Here.."style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Telephone Number </b></p>
+      <input type="text" Placeholder=" Enter Your Telephone No. ..." name="fn" style="width:300px;" >
+      <p style="font-family:arial; font-size:16px"><b>Mobile Number</b> </p>
+      <input type="text" name="mobile" id="mobile" Placeholder=" Enter Your Mobile No. ..."style="width:300px;">
+      <p style="font-family:arial; font-size:16px"><b>E-mail ID</b> </p>
+      <input type="text" name="email" id="email" Placeholder=" Enter Your Email ID..." style="width:300px;" >
+    </div>
+  
+    <div class="container">
+      <br><b style="font-family:arial; font-size:16px">4.2 Is permanent address same as present address? </b>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="p1" id="p1" onclick="same()"/>Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="p1" id="p2" onclick="same()"/>No&nbsp;&nbsp;&nbsp; If no, provide details in Column 4 of Supplementary Form 
+    <hr/></div>
+  </fieldset>
+  <fieldset>
+    <p style="font-size:20px;background-color:yellow;" class="container"><b>5. Emergency Contact Details </b></p>
+    
+    <div class="container col-xs-10">
+      <p style="font-family:arial; font-size:16px"><b>Name </b></p>
+      <input type="text" name="f1" id="f1" Placeholder="Type Here.."style="width:300px" disabled>
+      <p style="font-family:arial; font-size:16px"><b>Address (Mention address only if different from present residential address)</b> </p>
+      <input type="text" name="add" id="add"Placeholder="Type Here.."style="width:300px" disabled>
+      <p style="font-family:arial; font-size:16px"><b>Telephone Number </b></p>
+      <input type="text" name="tn" id="tn" Placeholder=" Enter Your Telephone No. ..."style="width:300px;" disabled >
+      <p style="font-family:arial; font-size:16px"><b>Mobile Number</b> </p>
+      <input type="text" name="m1"id="m1" Placeholder=" Enter Your Mobile No. ..."style="width:300px;" disabled>
+      <p style="font-family:arial; font-size:16px"><b>E-mail ID</b></p>
+      <input type="text" name="e1" id="e1" Placeholder=" Enter Your Email ID ..."style="width:300px;" disabled><hr/></div>
+
+  </fieldset>
+  <fieldset>
+    <p style="font-size:20px;background-color:yellow;" class="container"><b>6. Previous Passport/ Application Details </b></p>
+    <div class="container col-xs-8">
+      <p style="font-family:arial; font-size:16px"><b>Passport/ Identity 
+        Certificate Number</b></p>
+        <input type="text" name="pi" id="pi" Placeholder="Type Here.."style="width:300px;" disabled>
+      <p style="font-family:arial; font-size:16px"><b>Date of Issue (DD-MM-YYYY)</b> </p>
+      <input type="date" name="dateone"  id="di" onclick="validDate()"disabled>
+      <p style="font-family:arial; font-size:16px"><b>Date of Expiry (DD-MM-YYYY) </b></p>
+      <input type="date" name="de" id="de"disabled>
+      <p style="font-family:arial; font-size:16px"><b>Place of Issue</b> </p>
+      <input type="text" name="place" id="place" Placeholder="Type Here.."style="width:300px;" disabled><br>
+      If you have held/ hold any diplomatic/ official passport, provide details in Column 6 of Supplementary Form</div>
+      <div class="container">
+        <br><b style="font-family:arial; font-size:16px">6.2 Have you ever applied for passport, but not issued? </b>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="ever" id="ever"  onclick="apple()">Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="ever" id="ever1" onclick="apple()" >No&nbsp;&nbsp;&nbsp;(If yes, provide the following  details)
+      </div>
+      <div class="container">
+        <p style="font-family:arial; font-size:16px"><b>Name of passport office where applied  </b></p>
+        <input type="text" name="ww" id="ww" Placeholder="Type Here.."style="width:250px;" disabled ><hr/>
+      </div>
+  </fieldset>
+  <fieldset>
+    
+      <p style="font-size:20px;background-color:yellow;" class="container"><b>7. Other Details </b></p>
+      <div class="container">
+    <div class="label label-primary"><b>7.1 Provide the following details if there are any criminal proceedings pending against the applicant.</b></div>
+          <br>
+          
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_1_1">
+              7.1.1 Are any proceedings in respect of an offence alleged to have been committed by 
+							you pending before a criminal court in India? 
+              If yes, fill Column 6.1 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o" id="o" style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o" id="o" style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_1_2">
+              7.1.2 Has any warrant or summons for your appearance been issued & pending before a court under any
+              law for the time being in force?
+              If yes, fill Column 6.2 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o1" id="o1"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o1" id="o1"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_1_3">
+              7.1.3 Has a warrant for your arrest been issued by a court under any law for the time being in force?
+              If yes, fill Column 6.3 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o2" id="o2"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o2" id="o2"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_1_4">
+              7.1.4 Has an order prohibiting your departure from India been made by any court?
+              If yes, fill Column 6.4 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o3" id="o3"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o3" id="o3"style="margin: 10px;"/>No
+            </div>
+          </div><br><hr/>
+
+          <div class="label label-primary"><b>7.2 Provide the following details if the applicant has been convicted by a court in India.</b></div>
+          <br>
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_2_1">
+              7.2.1 Have you, at any time during the period of five years immediately preceding the date of this application, been convicted by a court in India for any offence involving moral turpitude and sentenced in respect thereof to imprisonment for not less than two years?
+              If yes, fill Column 6.5 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o4" id="o4"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o4" id="o4"style="margin: 10px;"/>No
+            </div>
+          </div><br><hr/>
+
+          <div class="label label-primary"><b>7.3 Provide the following details if the applicant has been refused/denied passport.</b></div>
+          <br>
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_3_1">
+              7.3.1 Have you ever been refused/denied passport?
+              If yes, fill Column 6.6 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o5" id="o5"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o5" id="o5"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_3_2">
+              7.3.2 Has your passport ever been impounded?
+              If yes, fill Column 6.7 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o6" id="o6"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o6" id="o6"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_3_1">
+              7.3.3 Has your passport ever been revoked?
+              If yes, fill Column 6.8 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o7" id="o7"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o7" id="o7"style="margin: 10px;"/>No
+            </div>
+          </div><br><hr/>
+
+          <div class="label label-primary"><b>7.4 Provide the following details if applicant has applied for or been granted foreign citizenship.</b></div>
+          <br>
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_4_1">
+              7.4.1 Have you ever been granted citizenship by any other region/country?
+              If yes, fill Column 6.9 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o8" id="o8"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o8" id="o8"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_4_2">
+              7.4.2 Have you ever held the passport of any other region/country at any time?
+              If yes, fill Column 6.10 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o9" id="o9"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o9" id="o9"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_4_3">
+              7.4.3 Have you ever surrendered your Indian passport?
+              If yes, fill Column 6.11 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o0" id="o0"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o0" id="o0"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_4_4">
+              7.4.4 Have you ever applied for renunciation of Indian citizenship?
+              If yes, fill Column 6.12 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o11" id="o11"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o11" id="o11"style="margin: 10px;"/>No
+            </div>
+          </div><br><hr/>
+
+          <div class="label label-primary"><b>7.5 Provide the following details if applicant has returned to India on Emergency Certificate.</b></div>
+          <br>
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_5_1">
+              7.5.1 Have you ever returned to India on Emergency Certificate (EC)?
+              If yes, fill Column 6.13 of Supplementary Form</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o12" id="o12"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o12" id="o12"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_5_2">
+              7.5.2 Have you ever been deported from any country?
+              If yes, was the cost borne by the Government of India and if so, has the same been refunded?</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o13" id="o13"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o13" id="o13"style="margin: 10px;"/>No
+            </div>
+          </div><br>
+
+          <div class="form-group row" id="bx">
+            <div class="col-sm-10" id="7_5_3">
+              7.5.3 Have you ever been repatriated from any country back to India?
+              If yes, was the cost borne by the Government of India and if so, has the same been refunded?</div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o14" id="o14"style="margin: 10px;"/>Yes
+            </div>
+            <div class="col-sm-1 form-check">
+              <input type="radio" name="o14" id="o14"style="margin: 10px;">No
+            </div>
+          </div><br><hr/>
+
+        </div>
+  </fieldset>
+  <fieldset>
+
+  
+     <p style="font-size:20px;background-color:yellow;" class="container"><b>8. Fee Details (Not to be filled by applicants submitting the application at Passport Seva Kendra)</b></p>
+     <div class="container"><div class="container">
+      <b style="font-family:arial; font-size:16px">8.1 Fee amount in (Rs)</b><br>
+      <input type="text" name="fa" id="fa" Placeholder="Type Here.."style="width:100px;">
+    </div><br>
+
+    <div class="container">
+      <b style="font-family:arial; font-size:16px">8.2 If paid by Demand Draft (DD), provide the following details</b>
+        <p style="font-family:arial; font-size:16px">DD Number</p>
+        <input type="text" Placeholder="Type Here.."name="dd" id="dd" style="width:200px;" >
+    </div><br>
+
+    <div class="container">
+      <p style="font-family:arial; font-size:16px">Date of Issue (DD-MM-YYYY) &nbsp; Date of Expiry (DD-MM-YYYY)</p>
+      <input type="date" name="dateone1" id="di1" onclick="validDate1()" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="de1" id="de1" >
+    </div><br>
+
+    <div class="container">
+      <p style="font-family:arial; font-size:16px">Bank Name</p>
+      <input type="text" name="bn" id="bn" Placeholder="Enter Bank Name.."style="width:500px;" >
+    </div><br><hr/>
+    </div>
+  </fieldset>
+  <fieldset>
+    
+      <p style="font-size:20px;background-color:yellow;" class="container"><b>9. Enclosures </b></p>
+      <div class="container">
+      <div class="container">
+        <p style="font-family:arial; font-size:16px">1.<input type="file" name="e11" id="e11" style="border:none;box-sizing:border-box;">&nbsp;&nbsp;&nbsp;6.&nbsp;&nbsp;<input type="file" name="e11" id style="border:none;box-sizing:border-box;"></p>
+          <p style="font-family:arial; font-size:16px">2.<input type="file" name="ff" style="border:none;box-sizing:border-box;">&nbsp;&nbsp;&nbsp;7.&nbsp;&nbsp;<input type="file" name="ff" style="border:none;box-sizing:border-box;"></p>
+          <p style="font-family:arial; font-size:16px">3.<input type="file" name="ff" style="border:none;box-sizing:border-box;">&nbsp;&nbsp;&nbsp;8.&nbsp;&nbsp;<input type="file" name="ff" style="border:none;box-sizing:border-box;"></p>
+          <p style="font-family:arial; font-size:16px">4.<input type="file" name="ff" style="border:none;box-sizing:border-box;">&nbsp;&nbsp;&nbsp;9.&nbsp;&nbsp;<input type="file" name="ff" style="border:none;box-sizing:border-box;"></p>
+          <p style="font-family:arial; font-size:16px">5.<input type="file" name="ff" style="border:none;box-sizing:border-box;">&nbsp;&nbsp;&nbsp;10.<input type="file" name="ff" style="border:none;box-sizing:border-box;"></p>
+      </div>
+    </div>
+
+    </fieldset>
+    <fieldset>
+
+      
+        <p style="font-size:20px;background-color:yellow;" class="container"><b>10. Self Declaration</b></p>
+        <div class="container">
+      <div class="container">
+        <p style="font-family:arial; font-size:16px; font-weight:lighter">I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired citizenship or travel document of any other country. I have not lost, surrendered or been deprived of the citizenship of India. I have not contravened any of the conditions relating to the possession and use of an Indian passport.</p>
+
+        <p style="font-family:arial; font-size:16px; font-weight:lighter">I affirm that the information and particulars given by me in this form are true and correct. I further state that I am not suppressing any material information in this regard. I further affirm that the enclosures and documentary proof submitted in support of my application for an Indian passport are authentic and solely pertain to me and I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted if found otherwise. I am aware that under the Passports Act, 1967 it is a criminal offence to furnish any false information or to suppress any material information with a view to obtaining passport or travel document.</p>
+
+        <p style="font-family:arial; font-size:16px; font-weight:lighter">I  have read and understood the contents of the above and by submitting this form certify that all the information submitted by me in the form is bonafide.</p>
+      </div>
+
+        <div class="container">
+          <p style="font-family:arial; font-size:16px">Place</p>
+          <input type="text" name="pz" id="pz" Placeholder="Type Here.."style="width: 200px; padding: 5px;">
+          <p style="font-family:arial; font-size:16px">  Date (DD-MM-YYYY)</p><input type="date" name="d7" id="d7">
+        </div><br>
+
+        <div class="container">
+          
+            Enter Signature/Left Hand Thumb Impression
+           
+           <p style="text-indent: 2px;">Update here:</p><input type="file" name="s11" id="s11" accept=".jpg,.jpeg,.png/*" style="width:400px; height:50px; box-shadow:2px 2px;">
+          </div><hr/>
+      </div>
+    
+
+    </fieldset>
+    <div class="container"  style="color:red">
+      <span id="error"></span>
+      <span id="error1"></span>
+      <span id="error2"></span>
+      <span id="error3"></span>
+      <span id="error81"></span>
+      <span id="error4"></span>
+      <span id="error5"></span>
+      <span id="error6"></span>
+      <span id="error7"></span>
+      <span id="error8"></span>
+      <span id="error9"></span>
+      <span id="error10"></span>
+      <span id="error11"></span>
+      <span id="error12"></span>
+      <span id="error13"></span>
+     <span  id="lblError"></span>
+      <span id="error14"></span>
+      <span id="error15"></span>
+      <span id="error16"></span>
+      <span id="error78"></span>
+      <span id="error17"></span>
+      <span id="error18"></span>
+      <span id="error19"></span>
+      <span id="error71"></span>
+      <span id="error72"></span>
+      <span id="error20"></span>
+      <span id="error74"></span>
+      <span id="error21"></span>
+      <span id="error22"></span>
+      <span id="error23"></span>
+      <span id="error73"></span>
+      <span id="error24"></span>
+      <span id="error25"></span>
+      <span id="error26"></span>
+      <span id="error27"></span>
+      <span id="error28"></span>
+      <span id="error76"></span>
+      <span id="error79"></span>
+      <span id="error77"></span>
+      <span id="error80"></span>
+      <span id="error29"></span>
+      <span id="error30"></span>
+      <span id="error31"></span>
+      <span id="error32"></span>
+      <span id="error33"></span>
+      <span id="error34"></span>
+      <span id="error35"></span>
+      <span id="error70"></span>
+      <span id="error75"></span>
+      <span id="error36"></span>
+      <span id="error37"></span>
+      <span id="error38"></span>
+      <span id="error39"></span>
+      <span id="error40"></span>
+      <span id="error41"></span>
+      <span id="error42"></span>
+      <span id="error43"></span>
+      <span id="error44"></span>
+      <span id="error45"></span>
+      <span id="error46"></span>
+      <span id="error47"></span>
+      <span id="error48"></span>
+      <span id="error49"></span>
+      <span id="error50"></span>
+      <span id="error51"></span>
+      <span id="error52"></span>
+      <span id="error53"></span>
+      <span id="error54"></span>
+      <span id="error55"></span>
+      <span id="error56"></span>
+      <span id="error57"></span>
+      <span id="error58"></span>
+      <span id="error59"></span>
+      <span id="error60"></span>
+      <span id="error61"></span>
+      <span id="error62"></span>
+      <span id="error63"></span>
+      <span id="error64"></span>
+      <span id="error65"></span>
+      <span id="error66"></span>
+      <span id="error67"></span>
+      <span id="error68"></span>
+      <span id="error69"></span>
+      </div>
+      <div class="container">
+        <p><center><input type="submit" value="Submit" style="width:100px; height:30px; background-color:lightwhite; font-weight:bold;box-shadow:2px 2px;">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset" style="width:100px; height:30px; background-color:lightwhite; font-weight:bold; box-shadow:2px 2px;"></center></p>
+      </div>
+
+  </form>
+
+</body>
+
+</html>
